@@ -1,0 +1,125 @@
+﻿<Window x:Class="KryptografiaWizualna.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KryptografiaWizualna"
+        mc:Ignorable="d"
+        Title="Kryptografia Wizualna" Height="566.5" Width="870.333" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="White"/>
+            <GradientStop Color="#FF0C8BC7" Offset="0.162"/>
+            <GradientStop Color="#FF268BF1" Offset="0.315"/>
+            <GradientStop Color="#FF58A8F9" Offset="0.687"/>
+            <GradientStop Color="#FF88C2FD" Offset="0.916"/>
+            <GradientStop Color="#FFC6DFF9" Offset="0.972"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,2,2">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.086"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <TabControl HorizontalAlignment="Left" Height="516" Margin="10,10,0,0" VerticalAlignment="Top" Width="844">
+            <TabItem Header="Zaszyfruj Obraz">
+                <Grid Background="#FFE5E5E5" Margin="0">
+
+                    <Grid HorizontalAlignment="Left" Height="468" Margin="287,10,0,0" VerticalAlignment="Top" Width="541">
+                        <Border Margin="0,0,0,0" BorderThickness="1" Background="#FFCBCBCB" BorderBrush="Black" RenderTransformOrigin="0.5,0.5">
+                            <Image x:Name="Image_Orginal" RenderTransformOrigin="0.5,0.5"/>
+                        </Border>
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Height="475" Margin="10,10,0,0" VerticalAlignment="Top" Width="272">
+                        <Button x:Name="Button_Load" Content="Wczytaj " HorizontalAlignment="Left" Margin="49,10,0,0" VerticalAlignment="Top" Width="170" Height="55" FontSize="20" Click="Button_Load_Click"/>
+                        <Slider x:Name ="Slider_Threshold_R" HorizontalAlignment="Left" Margin="32,83,0,0" VerticalAlignment="Top" Width="147" Maximum="255"  IsSnapToTickEnabled="True" TickFrequency="1" IsEnabled="False" ValueChanged="Slider_Threshold_R_ValueChanged" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black"/>
+                        <Slider x:Name ="Slider_Threshold_G" HorizontalAlignment="Left" Margin="32,106,0,0" VerticalAlignment="Top" Width="147" Maximum="255"  IsSnapToTickEnabled="True" TickFrequency="1" IsEnabled="False" ValueChanged="Slider_Threshold_G_ValueChanged"/>
+                        <Slider x:Name ="Slider_Threshold_B" HorizontalAlignment="Left" Margin="32,129,0,0" VerticalAlignment="Top" Width="147" Maximum="255" IsSnapToTickEnabled="True" TickFrequency="1" IsEnabled="False" ValueChanged="Slider_Threshold_B_ValueChanged"/>
+
+                        <TextBox x:Name="textbox_Treshold_R" HorizontalContentAlignment="Center" Height="18" Margin="184,86,56,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="32"/>
+
+                        <TextBox x:Name="textbox_Treshold_G" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="18" Margin="184,106,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="32"/>
+
+                        <TextBox x:Name="textbox_Treshold_B" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="18" Margin="184,129,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="32"/>
+
+                        <Label Content="R" HorizontalAlignment="Left" Margin="221,79,0,0" VerticalAlignment="Top" Height="25"/>
+                        <Label Content="G" HorizontalAlignment="Left" Margin="221,104,0,0" VerticalAlignment="Top" Height="25" RenderTransformOrigin="0.471,1.94"/>
+                        <Label Content="B" HorizontalAlignment="Left" Margin="221,125,0,0" VerticalAlignment="Top" Height="25"/>
+                        <Label Content="Powyżej progu pixel  staje się: 
+                               " HorizontalAlignment="Left" Margin="20,155,0,0" VerticalAlignment="Top" Height="33" Width="228" FontSize="16"/>
+                        <RadioButton x:Name="radioButton_pixel_black" Content="Czarny" HorizontalAlignment="Left" Margin="49,193,0,0" VerticalAlignment="Top" IsChecked="True" RenderTransformOrigin="0.09,3.176" FontSize="16"/>
+                        <RadioButton x:Name="radioButton_pixel_white" Content="Biały" HorizontalAlignment="Left" Margin="164,193,0,0" VerticalAlignment="Top" FontSize="16"/>
+                        <Button x:Name ="Button_enrypt"  IsEnabled="false" Content="Szyfruj" HorizontalAlignment="Left" Margin="49,362,0,0" FontSize="18"  VerticalAlignment="Top" Width="170" Height="59" Click="Button_Click_1"/>
+                        <Button  x:Name="Button_ShowTresholdResult" IsEnabled="false" Content="Progowanie" HorizontalAlignment="Left" Margin="81,218,0,0" VerticalAlignment="Top" Width="113" Height="50" Click="Button_Click" FontSize="18"/>
+                        <Grid HorizontalAlignment="Left" Height="104" Margin="47,268,0,0" VerticalAlignment="Top" Width="201">
+                            <RadioButton x:Name ="radio_2subpix" Content="2 subpiksele" HorizontalAlignment="Left" Margin="46,39,0,0" VerticalAlignment="Top" FontSize="18"/>
+                            <RadioButton x:Name ="radio_4subpix" Content="4 subpiksele" IsChecked="true" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="4.648,0.657" Margin="46,71,0,0" Width="117" FontSize="18"/>
+                            <Label Content="Tryb szyfrowania:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18"/>
+                        </Grid>
+
+                    </Grid>
+                    <Button x:Name ="Button_SaveUdzialy" Content="Zapisz" IsEnabled="False" HorizontalAlignment="Left" Margin="107,438,0,0" VerticalAlignment="Top" Width="80" Click="Button_SaveUdzialy_Click" Height="29" FontSize="18"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Podgląd Udziałów">
+                <Grid Background="#FFE5E5E5">
+                    <Slider x:Name="Slider_transparency" HorizontalAlignment="Left" Margin="12,14,0,0"  Maximum="255"  IsSnapToTickEnabled="True" TickFrequency="1" VerticalAlignment="Top" Width="806" ValueChanged="Slider_transparency_ValueChanged" Height="27"/>
+                    <Grid HorizontalAlignment="Left" Height="392" VerticalAlignment="Top" Width="818" Margin="10,86,0,0">
+                        <Image x:Name="Image_part1" Margin="10,10,10,10"/>
+                        <Image x:Name="Image_part2" Margin="10,10,10,10" RenderTransformOrigin="0.5,0.5" />
+                    </Grid>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Deszyfrator">
+                <Grid Background="#FFE5E5E5" Margin="0">
+
+                    <Grid HorizontalAlignment="Left" Height="457" Margin="287,10,0,0" VerticalAlignment="Top" Width="541">
+                        <Border Margin="0,0,0,0" BorderThickness="1" Background="#FFCBCBCB" BorderBrush="Black" RenderTransformOrigin="0.5,0.5">
+                            <Image  x:Name ="Image_decrypted" RenderTransformOrigin="0.5,0.5"/>
+                        </Border>
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Height="100" Margin="10,87,0,0" VerticalAlignment="Top" Width="130">
+                        <Border Margin="0,0,0,0" BorderThickness="1" Background="#FFCBCBCB" BorderBrush="Black" RenderTransformOrigin="0.5,0.5">
+                            <Image x:Name="Image_part1_2" RenderTransformOrigin="0.5,0.5"/>
+                        </Border>
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Height="100" Margin="153,87,0,0" VerticalAlignment="Top" Width="130">
+                        <Border Margin="0,0,0,0" BorderThickness="1" Background="#FFCBCBCB" BorderBrush="Black" RenderTransformOrigin="0.5,0.5">
+                            <Image  x:Name="Image_part2_2" RenderTransformOrigin="0.5,0.5"/>
+                        </Border>
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Height="475" Margin="10,10,0,0" VerticalAlignment="Top" Width="272">
+                        <Button x:Name="Button_Load_Parts" Content="Wczytaj " HorizontalAlignment="Left" Margin="49,10,0,0" VerticalAlignment="Top" Width="170" Height="55" FontSize="20" Click="Button_Load_Parts_Click" />
+                        <Button x:Name ="Button_Decrypt"  IsEnabled="false" Content="Odszyfruj" HorizontalAlignment="Left" Margin="49,312,0,0" FontSize="18"  VerticalAlignment="Top" Width="170" Height="59" Click="Button_Decrypt_Click" />
+                        <Grid HorizontalAlignment="Left" Height="104" Margin="35,187,0,0" VerticalAlignment="Top" Width="201">
+                            <RadioButton x:Name ="radio_2subpix_2" Content="2 subpiksele" HorizontalAlignment="Left" Margin="46,39,0,0" VerticalAlignment="Top" FontSize="18"/>
+                            <RadioButton x:Name ="radio_4subpix_2" Content="4 subpiksele" IsChecked="true" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="4.648,0.657" Margin="46,71,0,0" Width="117" FontSize="18"/>
+                            <Label Content="Tryb deszyfrowania:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="0,5,0,0"/>
+                        </Grid>
+
+                    </Grid>
+                    <Button x:Name ="Button_SaveDecrypted" Content="Zapisz" IsEnabled="False" HorizontalAlignment="Left" Margin="101,408,0,0" VerticalAlignment="Top" Width="80"  Height="29" FontSize="18" Click="Button_SaveDecrypted_Click"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Instrukcja Obsługi">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Program składa się z 5 zakładek.&#xA;- &quot;Zafyszfruj Obraz&quot;&#xA;&#x9;&#x9;W celu zaszyfrowania, musimy wczytać obraz za pomocą przycisku &quot;wczytaj&quot;,&#xA;&#x9;w zależności od tego czy obraz jest czarno-biały czy nie. Narzędzie do progowania zostanie &#xA;&#x9;włączone lub wyłączone. W celu przejścia do kolejnego kroku (szyfrowanie) obraz musi być&#xA;&#x9;czarnobiały. Po naciśnięciu przycisku szyfruj,  oprogramowanie zaszyfruje obraz i dostępny&#xA;&#x9;stanie się podgląd udziałów jak i możliwość zapisu.&#xA;-&quot;Podgląd Udziałów&quot;&#xA;&#x9;&#x9;Po zaszyfrowaniu obrazu, będziemy możliwość podglądu udziałów i manipulacją&#xA;&#x9;przezroczystością jednego z nich. Dzięki temu nie musimy stosować dodatkowego&#xA;&#x9;oprogramowania  do sprawdzenia poprawności wyniku.&#xA;-&quot;Deszyfrator&quot;&#xD;&#xA;&#x9;&#x9;Wczytujemy, dwa udziały, które chcemy połączyć, wybieramy tryb i klikamy &#xD;&#xA;&#x9;przycisk  Odszyfruj&#xA;-&quot;Instrukcja Obsługi&quot;&#xA;&#x9;Opis działania programu.&#xA;-&quot;Opis Działania&quot;&#xA;&#x9;Opis działania algorytmu." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.756,0.141" Height="468" Width="818" FontSize="18"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Opis Działania">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Szyfrowanie&#xA;&#x9;&#x9;Szyfrowanie obrazu polega na podzieleniu obrazu wczytanego, na dwa udziały w &#xA;&#x9;taki sposób aby pojedynczo były nie do odczytania, dopiero po nałożeniu ich na sobie &#xA;&#x9;szyfrowana wiadomość jest widoczna. Szyfrowania jest zaimplementowane w dwóch trybach:&#xA;&#x9;- 2 subpikseli&#xA;&#x9;&#x9;Każdy piksel wczytanego obrazu zostaje zamieniony na dwa nowe piksele, przez to &#xA;&#x9;ukryty obraz jest zdeformowany. Piksel biały jest reprezentowany przez taką samą parę na &#xD;&#xA;&#x9;obydwuch udziałach. Piksel czarny ma na dwóc udziałach przeciwstawne kolory. &#xA;&#xA;&#x9;- 4subpikseli&#xA;&#x9;&#x9;Każdy piksel wczytanego obrazu zostaje zamieniony na cztery nowe piksele, &#xA;&#x9;uzyskane udziały są dwa razy większe.Piksel biały jest reprezentowany przez take same&#xD;&#xA;&#x9;piksele  na  obydwuch udziałach. Piksel czarny ma na dwóc udziałach przeciwstawne kolory. &#xA;&#xA;Deszyfrowanie&#xD;&#xA;&#x9;Polega na porównywania bloków 1x2 lub 2x2 w zależności od trybu. Jeśli bloki są takie same&#xD;&#xA;&#x9;to kolor jest biały a jeśli się różnią to czarne.&#xA;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="468" Width="818" FontSize="18"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+</Window>

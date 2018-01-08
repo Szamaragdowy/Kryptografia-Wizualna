@@ -1,0 +1,15 @@
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\bin\Debug\KryptografiaWizualna.exe.config
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\bin\Debug\KryptografiaWizualna.exe
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\bin\Debug\KryptografiaWizualna.pdb
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\obj\Debug\KryptografiaWizualna.csprojResolveAssemblyReference.cache
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\obj\Debug\MainWindow.g.cs
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\obj\Debug\App.g.cs
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\obj\Debug\KryptografiaWizualna_MarkupCompile.cache
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\obj\Debug\KryptografiaWizualna_MarkupCompile.lref
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\obj\Debug\MainWindow.baml
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\obj\Debug\KryptografiaWizualna.g.resources
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\obj\Debug\KryptografiaWizualna.Properties.Resources.resources
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\obj\Debug\KryptografiaWizualna.csproj.GenerateResource.Cache
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\obj\Debug\KryptografiaWizualna.csproj.CoreCompileInputs.cache
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\obj\Debug\KryptografiaWizualna.exe
+C:\Users\Hubi\source\repos\KryptografiaWizualna\KryptografiaWizualna\obj\Debug\KryptografiaWizualna.pdb
